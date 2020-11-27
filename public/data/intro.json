@@ -1,0 +1,34 @@
+{
+    "scenery": "./backgrounds/bus_station_morning.jpg",
+    "stage": "FullScene",
+    "dialogue": [
+        {
+            "id": 1,
+            "text": [
+                "That is my bus!!"
+            ],
+            "next": {
+                "dialogue": 2
+            }
+        },
+        {
+            "id": 2,
+            "text": [
+                "Stop! Stop!!! Please wait!!!"
+            ],
+            "next": {
+                "dialogue": 3
+            }
+        },
+        {
+            "id": 3,
+            "text": [
+                "Damm't!!!",
+                "First day and I already missed the bus..."
+            ],
+            "next": {
+                "scene": "first_stop"
+            }
+        }
+    ]
+}
