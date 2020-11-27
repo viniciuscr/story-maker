@@ -1,0 +1,13 @@
+:root {
+  --box-bg-color: rgba(0, 0, 0, 0.5);
+  --box-bg-color-accent: white;
+  --text-color: white;
+  --text-color-accent: black;
+  --name-main: green;
+  --name-male: blue;
+  --name-female: darkmagenta;
+  --background-color: darkgray;
+  --main-color: gold;
+  --secondary-color: salmon;
+  --shadows-color: rgba(0, 0, 0, 0.527);
+}
