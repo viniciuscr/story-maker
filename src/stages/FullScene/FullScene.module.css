@@ -1,0 +1,13 @@
+.scene {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+}
+
+.scenario {
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: 100vw;
+  justify-content: center;
+  transition: background-image 0.5s ease-in-out;
+}
