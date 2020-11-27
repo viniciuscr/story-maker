@@ -1,0 +1,60 @@
+.dialogBox {
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 190px;
+}
+
+.dialogBox p {
+  margin: 0;
+}
+
+.text {
+  height: 170px;
+}
+
+.more {
+  text-align: center;
+  flex: 0 0 100%;
+  height: 20px;
+}
+
+.portrait {
+  text-align: center;
+  padding: 4px;
+}
+
+.portrait > img {
+  width: 128px;
+}
+
+.female {
+  color: var(--name-female);
+}
+
+.male {
+  color: var(--name-male);
+}
+
+.main {
+  color: var(--name-main);
+}
+
+.button {
+  text-shadow: 1px 1px 2px var(--shadows-color);
+  color: var(--text-color);
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  animation: spinning-cog 0.5s infinite ease alternate-reverse;
+}
+
+@keyframes spinning-cog {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
