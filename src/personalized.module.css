@@ -1,0 +1,47 @@
+.name {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.dialogBox {
+  padding: 1rem 1rem 0 1rem;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3 ) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.portrait img {
+  background-color: var(--box-bg-color);
+}
+
+.text {
+  color: var(--text-color);
+  margin: 0;;
+}
+.choicesBox {
+  margin: auto;
+  padding: 0;
+  width: 98vw;
+}
+
+.choice {
+  list-style-type: none;
+  height: 3.5rem;
+}
+
+.choice button {
+  background: none;
+  height: 3rem;
+  width: 100%;
+  border: solid 1px var(--box-bg-color-accent);
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.choice button:hover {
+  background-color: var(--box-bg-color-accent);
+  color: var(--text-color-accent);
+}
