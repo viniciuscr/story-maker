@@ -9,7 +9,7 @@ import useStatus from "../status/useStatus";
 
 const useDialogue = () => {
   const dispatch = useDispatch();
-  const [_, setStatus] = useStatus();
+  const [, setStatus] = useStatus();
   const dialogue = useSelector(selectCurrentDialogue) ?? {};
 
   const nextInteraction = (next) =>
