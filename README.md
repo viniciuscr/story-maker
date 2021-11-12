@@ -25,3 +25,8 @@ The project is organized on a way to assimilate a play
 
 3. **Dialogue**: Conversation for the current scene, it would be the script for that scene.
 
+Apart from there we also have some other important featires related to a game
+
+1. **Status**: Holds data related to the play, it could be life points, scores, itens acquired and such. This values can be used to determinate dialogues paths or limit options to select.  
+
+2. **Triggers**: In many situations one may want to trigger effects related to some event that have occured. A commom trigger would be *update_status* that apply changes to the status.
