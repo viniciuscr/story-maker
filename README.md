@@ -1,32 +1,70 @@
-# Story Maker a visual novel framework
-This is a side project that I work on my spare time, and I use it to test and try new things. In the near feature I want to let it open and easy to add new content.
+# Getting Started with Create React App
 
-I have lots of ideas for this project, most of then I still figuring out a way to do them. 
-So, for now I don't have a roadmap, I am just implementing things that I do belive are importants.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-> check a demo here: https://story-maker-iota.vercel.app
+## Available Scripts
 
-## Objective
-The main objective for  this project is: to delivery ready to use bootstrap to write light novel offering some customizations through the easiest way possible. At the same time it must be modular and extendable, making it easy to add more advanced and customized experiences.
+In the project directory, you can run:
 
+### `npm start`
 
-## Project structure
-### Current state
-This is a very early stage where we have the base concepts about how it is goning to work. Not all is defined but at least it has enought to create a simple novel where no persistent state is needed.
-### Tech stack
-The projects is made with [React](https://pt-br.reactjs.org) to create the interface and  [React Redux](https://react-redux.js.org/) to handle the application state.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Core features
-The project is organized on a way to assimilate a play
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-1. **Scene**: Scene represents what is going on on the current state of the story, it has actors that performs on the stage and have dialogues.
+### `npm test`
 
-2. **Actors**: Characters that interact on the current scene
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-3. **Dialogue**: Conversation for the current scene, it would be the script for that scene.
+### `npm run build`
 
-Apart from there we also have some other important featires related to a game
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-1. **Status**: Holds data related to the play, it could be life points, scores, itens acquired and such. This values can be used to determinate dialogues paths or limit options to select.  
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-2. **Triggers**: In many situations one may want to trigger effects related to some event that have occured. A commom trigger would be *update_status* that apply changes to the status.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
