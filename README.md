@@ -1,73 +1,31 @@
-# Turborepo starter
+# Story Maker a visual novel framework
+This is a side project that I work on my spare time, and I use it to test and try new things. In the near feature I want to let it open and easy to add new content.
 
-This is an official npm starter turborepo.
+I have lots of ideas for this project, most of then I still figuring out a way to do them. 
+So, for now I don't have a roadmap, I am just implementing things that I do belive are importants.
 
-## What's inside?
 
-This turborepo uses [npm](https://www.npmjs.com/) as a package manager. It includes the following packages/apps:
+## Objective
+The main objective for  this project is: to delivery ready to use bootstrap to write light novel offering some customizations through the easiest way possible. At the same time it must be modular and extendable, making it easy to add more advanced and customized experiences.
 
-### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+## Project structure
+### Current state
+This is a very early stage where we have the base concepts about how it is goning to work. Not all is defined but at least it has enought to create a simple novel where no persistent state is needed.
+### Tech stack
+The projects is made with [React](https://pt-br.reactjs.org) to create the interface and  [React Redux](https://react-redux.js.org/) to handle the application state.
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+### Core features
+The project is organized on a way to assimilate a play
 
-### Utilities
+1. **Scene**: Scene represents what is going on on the current state of the story, it has actors that performs on the stage and have dialogues.
 
-This turborepo has some additional tools already setup for you:
+2. **Actors**: Characters that interact on the current scene
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+3. **Dialogue**: Conversation for the current scene, it would be the script for that scene.
 
-### Build
+Apart from there we also have some other important features related to a game
 
-To build all apps and packages, run the following command:
+1. **Status**: Holds data related to the play, it could be life points, scores, itens acquired and such. This values can be used to determinate dialogues paths or limit options to select.  
 
-```
-cd my-turborepo
-npm run build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-npm run dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+2. **Triggers**: In many situations one may want to trigger effects related to some event that have occured. A commom trigger would be *update_status* that apply changes to the status.
