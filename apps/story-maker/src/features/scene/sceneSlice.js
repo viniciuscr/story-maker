@@ -3,7 +3,7 @@ import { setDialogues } from "../dialogue/dialogueSlice";
 
 export const STAGE_DIRECTIONS = { leave: "leave", enters: "enters" };
 
-//TODO: send to other file
+//TODO: move to other file
 const fetchScene = async (scene) =>
   await (await fetch(`./data/${scene}.json`)).json();
 
@@ -12,6 +12,8 @@ export const sceneSlice = createSlice({
   initialState: {
     currentScene: {},
     onStage: [],
+    directions:[],
+    settings:{},
   },
   reducers: {
     setCurrentScene: (state, action) => {
@@ -19,6 +21,11 @@ export const sceneSlice = createSlice({
       return state;
     },
     enters: (state, action) => {
+      state.directions.push({
+        action: STAGE_DIRECTIONS.enters,
+        actor: action.payload.actor,
+        animations: action.payload.animation,
+      });
       state.onStage.push(action.payload);
       return state;
     },
@@ -44,8 +51,12 @@ export const goToScene = (scene) => async (dispatch) => {
   dispatch(setDialogues(dialogue));
 };
 
+export const selectOnStage = (state) => state.scene.onStage;
+
 export const selectStage = (state) => state.scene.currentScene.stage;
 
 export const selectScenery = (state) => state.scene.currentScene.scenery;
+
+export const selectSceneSettings = (state) => state.scene.currentScene.settings;
 
 export default sceneSlice.reducer;

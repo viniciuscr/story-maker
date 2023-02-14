@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { goToScene } from "../scene/sceneSlice";
+import { enters, goToScene } from "../scene/sceneSlice";
 import {
   goToDialogue,
   nextDialogue,
@@ -20,6 +20,9 @@ const useDialogue = () => {
       triggers.forEach(({ effect, value }) => {
         if (effect === "update_status") {
           setStatus(value.value, value.path);
+        }
+        if (effect === "enters") {
+          dispatch(enters(value.affected))
         }
       });
     }

@@ -1,20 +1,41 @@
 {
+  "stage": "Conversation",
   "scenery": "./scenes/second-scene/desktop.jpg",
-  "stage": "FullScene",
+  "settings":{
+    "keepActorsInScene": true
+  },
+  "actors": {
+    "suzuki": {
+      "gender": "female",
+      "costume": {
+        "unidentified": {
+          "name": "???",
+          "portrait": "./actors/suzuki/portrait.png",
+          "bodyImage": "./actors/suzuki/portrait.png"
+        },
+        "default": {
+          "name": "Kino Suzuki",
+          "portrait": "./actors/suzuki/portrait.png",
+          "bodyImage": "./actors/suzuki/portrait.png"
+        }
+      }
+    },
+    "aykawa": {
+      "gender": "female",
+      "costume": {
+        "default": {
+          "name": "Aykawa",
+          "portrait": "./actors/aykawa/portrait.png",
+          "bodyImage": "./actors/aykawa/portrait.png"
+        }
+      }
+    }
+  },
   "dialogue": [
     {
       "id": 1,
       "text": ["Good morning Aykawa", "Who is your friend?"],
-      "actor": {
-        "name": "???",
-        "gender": "female",
-        "portrait": "./actors/suzuki/portrait.png"
-      },
-      "trigger": {
-        "effect": "enters",
-        "affected": "suzuki",
-        "when": "before"
-      },
+      "actor": { "identity": "suzuki", "costume": "unidentified", "position":"center" },
       "next": {
         "dialogue": 2
       }
@@ -94,11 +115,7 @@
         "This is.... This is... ammnn",
         "This is Kamura and he is starting at Dalion today."
       ],
-      "actor": {
-        "name": "Aykawa",
-        "gender": "female",
-        "portrait": "./actors/aykawa/portrait.png"
-      },
+      "actor":  { "identity": "suzuki",  "position":"right" },
       "next": {
         "dialogue": 3
       }
