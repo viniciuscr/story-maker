@@ -16,7 +16,7 @@
   "dependencies": {
     "@manypkg/cli": "latest",
     "eslint-config-custom": "*",
-    "prettier": "latest",
+    "prettier": "2.8.8",
     "turbo": "latest"
   },
   "engines": {
