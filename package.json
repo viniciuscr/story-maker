@@ -17,7 +17,7 @@
     "@manypkg/cli": "latest",
     "eslint-config-custom": "*",
     "prettier": "latest",
-    "turbo": "latest"
+    "turbo": "1.9.9"
   },
   "engines": {
     "node": ">=14.0.0"
