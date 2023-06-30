@@ -14,7 +14,7 @@
     "postinstall": "manypkg fix"
   },
   "dependencies": {
-    "@manypkg/cli": "latest",
+    "@manypkg/cli": "0.21.0",
     "eslint-config-custom": "*",
     "prettier": "latest",
     "turbo": "latest"
