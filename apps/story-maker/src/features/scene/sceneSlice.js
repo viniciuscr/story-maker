@@ -12,8 +12,7 @@ export const sceneSlice = createSlice({
   initialState: {
     currentScene: {},
     onStage: [],
-    directions:[],
-    settings:{},
+    settings: {},
   },
   reducers: {
     setCurrentScene: (state, action) => {
@@ -21,20 +20,10 @@ export const sceneSlice = createSlice({
       return state;
     },
     enters: (state, action) => {
-      state.directions.push({
-        action: STAGE_DIRECTIONS.enters,
-        actor: action.payload.actor,
-        animations: action.payload.animation,
-      });
-      state.onStage.push(action.payload);
+      state.onStage.push(action.payload.affected);
       return state;
     },
     exits: (state, action) => {
-      state.directions.push({
-        action: STAGE_DIRECTIONS.leave,
-        actor: action.payload.actor,
-        animations: action.payload.animation,
-      });
       state.onStage = state.onStage.filter(
         (actors) => actors.name !== action.payload
       );

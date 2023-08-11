@@ -14,7 +14,7 @@ const TextBox = ({ children, translucent, ...props }) => {
 
   useKeyBinder(" ", () => moreRef.current?.click());
 
-  const Choices = ({ options, text }) => (
+  const Choices = ({ options }) => (
     <>
       <ul className={personalizedStyles.choicesBox}>
         {options.map((choice) => (
@@ -39,7 +39,7 @@ const TextBox = ({ children, translucent, ...props }) => {
         ))}
       </div>
       {dialogue?.choices ? (
-        <Choices text={dialogue.text} options={dialogue.choices} />
+        <Choices options={dialogue.choices} />
       ) : (
         <div className={structuralStyles.more}>
           <button
