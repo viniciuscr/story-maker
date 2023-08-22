@@ -10,7 +10,8 @@ export const dialogueSlice = createSlice({
     nextDialogue: (state) => {
       const { next } = state.current;
 
-      state.current = state.dialogues.find(({ id }) => id === next.dialogue) ?? state.current;
+      state.current =
+        state.dialogues.find(({ id }) => id === next.dialogue) ?? state.current;
       return state;
     },
     goToDialogue: (state, action) => {
@@ -25,11 +26,8 @@ export const dialogueSlice = createSlice({
   },
 });
 
-export const {
-  nextDialogue,
-  setDialogues,
-  goToDialogue,
-} = dialogueSlice.actions;
+export const { nextDialogue, setDialogues, goToDialogue } =
+  dialogueSlice.actions;
 
 export const selectCurrentDialogue = (state) => state.dialogue.current;
 

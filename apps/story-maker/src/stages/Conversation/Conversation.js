@@ -1,13 +1,14 @@
 import React from "react";
 import TextBox from "../../features/textBox/TextBox";
 import structuralStyles from "./Conversation.module.css";
-import { selectScenery, selectOnStage } from "../../features/scene/sceneSlice";
-import {  useSelector } from "react-redux";
+import { selectScenery } from "../../features/scene/sceneSlice";
+import { useSelector } from "react-redux";
 import OnSpot from "./OnSpot";
+import useActor from "../../features/actor/useActor";
 
 const Conversation = () => {
   const scenery = useSelector(selectScenery);
-  const onStage = useSelector(selectOnStage);
+  const { actorsOnStage } = useActor();
 
   return (
     <div
@@ -16,7 +17,7 @@ const Conversation = () => {
       }}
       className={structuralStyles.scenario}
     >
-     <OnSpot actors={onStage} />
+      <OnSpot actors={actorsOnStage} />
       <div className={structuralStyles.scene}>
         <TextBox translucent />
       </div>

@@ -10,11 +10,13 @@
         "gender": "female",
         "portrait": "./actors/aykawa/portrait.png"
       },
-      "triggers":[ {
-        "effect": "enters",
-        "value": { "affected": "aykaway" },
-        "when": "before"
-      }],
+      "triggers": [
+        {
+          "effect": "enters",
+          "value": { "affected": "aykawa" },
+          "when": "before"
+        }
+      ],
       "next": {
         "dialogue": 2
       }

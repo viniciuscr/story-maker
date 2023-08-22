@@ -17,16 +17,16 @@ const listenerMiddleware = createListenerMiddleware();
 
 listenerMiddleware.startListening({
   matcher: isAnyOf(setDialogues, nextDialogue),
-  effect: async (action, listenerApi) => {
+  effect: async (_, listenerApi) => {
     const current = listenerApi.getState().dialogue?.current;
 
     current?.triggers?.forEach(({ effect, value }) => {
+      console.debug(`Pushing trigger [${effect}]`, value);
       if (effect === "update_status") {
         setStatus(value.value, value.path);
       }
       if (effect === "enters") {
-        console.log(value);
-        listenerApi.dispatch(pushDirection(value));
+        listenerApi.dispatch(pushDirection(value.affected));
       }
     });
   },
@@ -35,7 +35,7 @@ listenerMiddleware.startListening({
 listenerMiddleware.startListening({
   actionCreator: pushDirection,
   effect: async (action, listenerApi) => {
-    console.log(action);
+    console.debug(`Adding ${action.payload} to onStage`);
 
     listenerApi.dispatch(enters(action.payload));
   },

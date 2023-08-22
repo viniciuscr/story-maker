@@ -20,8 +20,7 @@ export const sceneSlice = createSlice({
       return state;
     },
     enters: (state, action) => {
-      state.onStage.push(action.payload.affected);
-      return state;
+      return { ...state, onStage: [...state.onStage, action.payload] };
     },
     exits: (state, action) => {
       state.onStage = state.onStage.filter(
@@ -41,6 +40,8 @@ export const goToScene = (scene) => async (dispatch) => {
 };
 
 export const selectOnStage = (state) => state.scene.onStage;
+
+export const selectActorsInScene = (state) => state.scene.currentScene.actors;
 
 export const selectStage = (state) => state.scene.currentScene.stage;
 
