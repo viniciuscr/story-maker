@@ -1,7 +1,7 @@
 {
   "stage": "Conversation",
-  "scenery": "./scenes/second-scene/desktop.jpg",
-  "settings":{
+  "scenery": "./scenes/second-scene/desktop.png",
+  "settings": {
     "keepActorsInScene": true
   },
   "actors": {
@@ -11,12 +11,12 @@
         "unidentified": {
           "name": "???",
           "portrait": "./actors/suzuki/portrait.png",
-          "bodyImage": "./actors/suzuki/portrait.png"
+          "bodyImage": "./actors/suzuki/school_uniform.png"
         },
         "default": {
           "name": "Kino Suzuki",
           "portrait": "./actors/suzuki/portrait.png",
-          "bodyImage": "./actors/suzuki/portrait.png"
+          "bodyImage": "./actors/suzuki/school_uniform.png"
         }
       }
     },
@@ -26,7 +26,7 @@
         "default": {
           "name": "Aykawa",
           "portrait": "./actors/aykawa/portrait.png",
-          "bodyImage": "./actors/aykawa/portrait.png"
+          "bodyImage": "./actors/aykawa/school_uniform.png"
         }
       }
     }
@@ -35,7 +35,18 @@
     {
       "id": 1,
       "text": ["Good morning Aykawa", "Who is your friend?"],
-      "actor": { "identity": "suzuki", "costume": "unidentified", "position":"center" },
+      "actor": {
+        "identity": "suzuki",
+        "costume": "unidentified",
+        "position": "center"
+      },
+      "triggers": [
+        {
+          "effect": "enters",
+          "value": { "affected": "suzuki" },
+          "when": "before"
+        }
+      ],
       "next": {
         "dialogue": 2
       }
@@ -115,7 +126,7 @@
         "This is.... This is... ammnn",
         "This is Kamura and he is starting at Dalion today."
       ],
-      "actor":  { "identity": "suzuki",  "position":"right" },
+      "actor": { "identity": "suzuki", "position": "right" },
       "next": {
         "dialogue": 3
       }

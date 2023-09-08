@@ -1,8 +1,16 @@
+import structuralStyles from "./Conversation.module.css";
+
 const OnSpot = ({ actors }) => {
   return (
-    <div>
+    <div className={structuralStyles.onSpot}>
       {actors.map((actor) => (
-        <img src={actor.costume.default.bodyImage} alt={actors.name} />
+        <>
+          <img
+            key={actor.id}
+            src={actor.costume.default.bodyImage}
+            alt={actors.name}
+          />
+        </>
       ))}
     </div>
   );

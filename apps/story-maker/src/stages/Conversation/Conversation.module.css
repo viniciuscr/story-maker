@@ -11,3 +11,17 @@
   justify-content: center;
   transition: background-image 0.5s ease-in-out;
 }
+
+.onSpot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80vw;
+  margin: auto;
+  
+}
+
+.onSpot > img{
+  margin-top: 20vh;
+  min-height: 120vh;
+}
