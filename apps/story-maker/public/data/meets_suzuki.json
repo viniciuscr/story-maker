@@ -6,6 +6,8 @@
   },
   "actors": {
     "suzuki": {
+      "id": 1,
+      "name": "Suzuki Kino",
       "gender": "female",
       "costume": {
         "unidentified": {
@@ -21,6 +23,8 @@
       }
     },
     "aykawa": {
+      "id": 2,
+      "name": "Aykawa Miso",
       "gender": "female",
       "costume": {
         "default": {

@@ -15,18 +15,17 @@ const TextBox = ({ children, translucent, ...props }) => {
   useKeyBinder(" ", () => moreRef.current?.click());
 
   const Choices = ({ options }) => (
-    <>
-      <ul className={personalizedStyles.choicesBox}>
-        {options.map((choice) => (
-          <li
-            className={personalizedStyles.choice}
-            onClick={() => choose(choice)}
-          >
-            <button>{choice.text}</button>
-          </li>
-        ))}
-      </ul>
-    </>
+    <ul className={personalizedStyles.choicesBox}>
+      {options.map((choice, index) => (
+        <li
+          key={index}
+          className={personalizedStyles.choice}
+          onClick={() => choose(choice)}
+        >
+          <button>{choice.text}</button>
+        </li>
+      ))}
+    </ul>
   );
 
   const Dialogue = ({ text, next }) => (
@@ -34,8 +33,8 @@ const TextBox = ({ children, translucent, ...props }) => {
       <div
         className={classNames(structuralStyles.text, personalizedStyles.text)}
       >
-        {text?.map((line) => (
-          <p>{line}</p>
+        {text?.map((line, index) => (
+          <p key={index}>{line}</p>
         ))}
       </div>
       {dialogue?.choices ? (

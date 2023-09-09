@@ -4,13 +4,11 @@ const OnSpot = ({ actors }) => {
   return (
     <div className={structuralStyles.onSpot}>
       {actors.map((actor) => (
-        <>
-          <img
-            key={actor.id}
-            src={actor.costume.default.bodyImage}
-            alt={actors.name}
-          />
-        </>
+        <img
+          key={actor.id}
+          src={actor.costume.default.bodyImage}
+          alt={actor.name}
+        />
       ))}
     </div>
   );
