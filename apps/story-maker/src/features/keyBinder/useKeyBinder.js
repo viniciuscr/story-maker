@@ -7,7 +7,7 @@ const useKeyBinder = (key, action) => {
   );
   useEffect(() => {
     document.addEventListener("keydown", checkBinders, false);
-  }, [checkBinders]);
+  }, []);
 
   return true;
 };
