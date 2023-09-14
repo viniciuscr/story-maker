@@ -1,17 +1,15 @@
 import React from "react";
 import Scene from "./features/scene/Scene";
 import "./App.css";
-import { useDispatch } from "react-redux";
-import { goToScene } from "./features/scene/sceneSlice";
+import TitleScreen from "./features/titleScreen/TitleScreen";
+import { useSelector } from "react-redux";
+import { selectIsShowing } from "./features/titleScreen/titleScreenSlice";
 
 function App() {
-  const dispatch = useDispatch();
-  dispatch(goToScene("intro"));
+  const showTitleScreen = useSelector(selectIsShowing);
 
   return (
-    <div className="App">
-      <Scene />
-    </div>
+    <div className="App">{showTitleScreen ? <TitleScreen /> : <Scene />}</div>
   );
 }
 

@@ -12,6 +12,7 @@ import dialogueReducer, {
 import statusReducer, { setStatus } from "../features/status/statusSlice";
 import directionReducer from "../features/direction/directionSlice";
 import { pushDirection } from "../features/direction/directionSlice";
+import titleScreenReducer from "../features/titleScreen/titleScreenSlice";
 
 const listenerMiddleware = createListenerMiddleware();
 
@@ -41,13 +42,26 @@ listenerMiddleware.startListening({
   },
 });
 
-export default configureStore({
+const store = configureStore({
   reducer: {
     scene: sceneReducer,
     dialogue: dialogueReducer,
     status: statusReducer,
     directions: directionReducer,
+    titleScreen: titleScreenReducer,
   },
+  preloadedState:
+    {
+      ...JSON.parse(localStorage.getItem("reduxState")),
+      titleScreen: { show: true },
+    } ?? undefined,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().prepend(listenerMiddleware.middleware),
 });
+
+store.subscribe(() => {
+  const state = store.getState();
+  localStorage.setItem("reduxState", JSON.stringify(state));
+});
+
+export default store;

@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.rectangle {
+  width: 300px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.list {
+  padding: 0;
+}
+
+.item {
+  cursor: pointer;
+  list-style-type: none;
+  padding : 10px;
+  
+}
+
+.item:hover {
+  background-color: lightgray;
+}
