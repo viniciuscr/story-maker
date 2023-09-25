@@ -11,10 +11,6 @@ const Welcome = () => {
     { label: "Exit" },
   ];
 
-  const handleClick = (action) => {
-    action();
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.rectangle}>
@@ -23,7 +19,7 @@ const Welcome = () => {
             <li
               key={item}
               className={styles.item}
-              onClick={() => handleClick(item.action)}
+              onClick={() => item.action()}
             >
               {item.label}
             </li>

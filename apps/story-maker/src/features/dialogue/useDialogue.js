@@ -13,8 +13,7 @@ const useDialogue = () => {
   const nextInteraction = (next) =>
     next.scene ? dispatch(goToScene(next.scene)) : dispatch(nextDialogue());
 
-
-    //TODO: desnecessario, o listner vai fazer o update_status 
+  //TODO: desnecessario, o listner vai fazer o update_status
   const choose = ({ next }) => {
     next.scene
       ? dispatch(goToScene(next.scene))

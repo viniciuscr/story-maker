@@ -38,6 +38,7 @@ listenerMiddleware.startListening({
   effect: async (action, listenerApi) => {
     console.debug(`Adding ${action.payload} to onStage`);
 
+    //  listenerApi.dispatch(popDirection(action.payload));
     listenerApi.dispatch(enters(action.payload));
   },
 });
@@ -52,7 +53,7 @@ const store = configureStore({
   },
   preloadedState:
     {
-      ...JSON.parse(localStorage.getItem("reduxState")),
+      ...JSON.parse(localStorage.getItem("autosave")),
       titleScreen: { show: true },
     } ?? undefined,
   middleware: (getDefaultMiddleware) =>
@@ -61,7 +62,8 @@ const store = configureStore({
 
 store.subscribe(() => {
   const state = store.getState();
-  localStorage.setItem("reduxState", JSON.stringify(state));
+  //TODO move autosave to constant
+  localStorage.setItem("autosave", JSON.stringify(state));
 });
 
 export default store;
