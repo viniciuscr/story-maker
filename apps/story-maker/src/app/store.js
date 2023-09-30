@@ -1,5 +1,6 @@
 import {
   configureStore,
+  createAction,
   createListenerMiddleware,
   isAnyOf,
 } from "@reduxjs/toolkit";
@@ -12,9 +13,11 @@ import dialogueReducer, {
 import statusReducer, { setStatus } from "../features/status/statusSlice";
 import directionReducer from "../features/direction/directionSlice";
 import { pushDirection } from "../features/direction/directionSlice";
-import titleScreenReducer from "../features/titleScreen/titleScreenSlice";
+import titleScreenReducer from "../features/settings/SettingsSlice";
 
 const listenerMiddleware = createListenerMiddleware();
+
+export const startNewGame = createAction("NEW_GAME");
 
 listenerMiddleware.startListening({
   matcher: isAnyOf(setDialogues, nextDialogue),
@@ -38,7 +41,6 @@ listenerMiddleware.startListening({
   effect: async (action, listenerApi) => {
     console.debug(`Adding ${action.payload} to onStage`);
 
-    //  listenerApi.dispatch(popDirection(action.payload));
     listenerApi.dispatch(enters(action.payload));
   },
 });
