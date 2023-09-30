@@ -7,6 +7,7 @@ const useKeyBinder = (key, action) => {
   );
   useEffect(() => {
     document.addEventListener("keydown", checkBinders, false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return true;

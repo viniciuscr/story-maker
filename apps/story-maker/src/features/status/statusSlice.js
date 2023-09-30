@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import _set from "lodash.set";
 import _get from "lodash.get";
+import { startNewGame } from "../../app/store";
 
 export const statusSlice = createSlice({
   name: "status",
   initialState: {},
+  extraReducers: (builder) => builder.addCase(startNewGame, () => ({})),
   reducers: {
     setStatus: (state, action) => {
       const current = _get(state, action.payload.path);

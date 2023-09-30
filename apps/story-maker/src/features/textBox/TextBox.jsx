@@ -6,6 +6,7 @@ import structuralStyles from "./TextBox.module.css";
 
 import useKeyBinder from "../keyBinder/useKeyBinder";
 import useDialogue from "../dialogue/useDialogue";
+import MenuItem from "../../core-base/MenuItem";
 
 const TextBox = ({ children, translucent, ...props }) => {
   const [dialogue, choose, nextInteraction] = useDialogue();
@@ -17,13 +18,12 @@ const TextBox = ({ children, translucent, ...props }) => {
   const Choices = ({ options }) => (
     <ul className={personalizedStyles.choicesBox}>
       {options.map((choice, index) => (
-        <li
+        <MenuItem
           key={index}
           className={personalizedStyles.choice}
-          onClick={() => choose(choice)}
-        >
-          <button>{choice.text}</button>
-        </li>
+          action={() => choose(choice)}
+          label={choice.text}
+        />
       ))}
     </ul>
   );

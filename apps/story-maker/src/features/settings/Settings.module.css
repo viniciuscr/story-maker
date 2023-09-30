@@ -3,12 +3,10 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background:var(--background-color);
-  background:var(--background-radial-gradient)
 }
 
 .list {
   padding: 0;
-  width: 400px;
+  min-width: 400px;
 }
 
