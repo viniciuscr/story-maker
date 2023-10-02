@@ -10,11 +10,9 @@
     "build": "turbo run build",
     "start": "turbo run start",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "postinstall": "manypkg fix"
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "dependencies": {
-    "@manypkg/cli": "latest",
     "eslint-config-custom": "*",
     "prettier": "latest",
     "turbo": "1.10.14"
