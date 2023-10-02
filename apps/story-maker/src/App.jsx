@@ -1,4 +1,3 @@
-import React from "react";
 import Scene from "./features/scene/Scene";
 import "./App.css";
 import TitleScreen from "./features/titleScreen/TitleScreen";
