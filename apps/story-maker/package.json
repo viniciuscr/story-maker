@@ -18,8 +18,7 @@
     "classnames": "^2.3.2",
     "lodash.get": "^4.4.2",
     "lodash.set": "^4.3.2",
-    "react-redux": "^8.1.2",
-    "@story-maker/core-feature-base": "workspace:/packages/*"
+    "react-redux": "^8.1.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

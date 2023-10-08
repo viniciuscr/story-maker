@@ -1,7 +1,7 @@
 import React from "react";
 import structuralStyles from "./Settings.module.css";
 import useSettings from "./useSettings";
-import { MenuItem } from "@story-maker/core-feature-base";
+import MenuItem from "../../core-base/MenuItem";
 import classNames from "classnames";
 import personalizedStyles from "../../personalized.module.css";
 
