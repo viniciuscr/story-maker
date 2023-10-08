@@ -10,13 +10,13 @@
   border-radius: var(--border-radius);
 }
 
-.portrait  {
+.portrait {
   border-radius: var(--border-radius);
   border: var(--border-line);
 }
 .portrait img:hover {
-  --webkit-transform: scale(1.10);
-  transform: scale(1.10) ;
+  --webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .text {
@@ -49,17 +49,21 @@
 }
 
 .escapeMenu {
-  background:var(--background-color);
-  background:var(--background-radial-gradient)
+  background: var(--background-color);
+  background: var(--background-radial-gradient);
 }
 
 .itemMenu {
   border-radius: var(--border-radius);
   border: var(--border-line);
-  background-color: var(--box-bg-color-accent)
+  background-color: var(--box-bg-color-accent);
 }
 
-.escapeMenu .item {
+.listItem {
   text-transform: uppercase;
   font-weight: bold;
+}
+
+.listItem:hover {
+  background-color: var(--hover-color);
 }

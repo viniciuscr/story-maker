@@ -1,7 +1,7 @@
 import React from "react";
 import structuralStyles from "./Settings.module.css";
 import useSettings from "./useSettings";
-import MenuItem from "../../core-base/MenuItem";
+import { MenuItem } from "@story-maker/core-feature-base";
 import classNames from "classnames";
 import personalizedStyles from "../../personalized.module.css";
 
@@ -15,20 +15,26 @@ const SettingsMenu = () => {
   ];
 
   return (
-    <div className={classNames(structuralStyles.container, personalizedStyles.escapeMenu)}>
-    
-        <ul className={structuralStyles.list}>
-          {items.map((item) => (
-            <MenuItem className={personalizedStyles.item}
-              key={item}
-              action={item.action}
-              label={item.label}
-            />
-              
-          ))}
-        </ul>
-      </div>
-    
+    <div
+      className={classNames(
+        structuralStyles.container,
+        personalizedStyles.escapeMenu
+      )}
+    >
+      <ul className={structuralStyles.list}>
+        {items.map((item) => (
+          <MenuItem
+            extraClass={[
+              personalizedStyles.listItem,
+              personalizedStyles.itemMenu,
+            ]}
+            key={item}
+            action={item.action}
+            label={item.label}
+          />
+        ))}
+      </ul>
+    </div>
   );
 };
 
