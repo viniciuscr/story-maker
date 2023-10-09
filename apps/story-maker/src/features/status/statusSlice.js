@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import _set from "lodash.set";
 import _get from "lodash.get";
-import { startNewGame } from "../../app/store";
+import { startNewGame } from "../../app/extraReducers";
 
 export const statusSlice = createSlice({
   name: "status",

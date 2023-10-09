@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { setDialogues } from "../dialogue/dialogueSlice";
+import { startNewGame } from "../../app/extraReducers";
 
 export const STAGE_DIRECTIONS = { leave: "leave", enters: "enters" };
 
@@ -14,6 +15,13 @@ export const sceneSlice = createSlice({
     onStage: [],
     settings: {},
   },
+
+  extraReducers: (builder) =>
+    builder.addCase(startNewGame, () => ({
+      currentScene: {},
+      onStage: [],
+      settings: {},
+    })),
   reducers: {
     setCurrentScene: (state, action) => {
       state.currentScene = action.payload;

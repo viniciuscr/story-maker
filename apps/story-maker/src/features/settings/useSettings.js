@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { goToScene } from "../scene/sceneSlice";
 import { hide, newSave } from "./SettingsSlice";
-import { startNewGame } from "../../app/store";
+import { startNewGame } from "../../app/extraReducers";
 
 const useSettings = () => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const useSettings = () => {
 
   const loadGame = () => {};
 
-  return { newGame, continueGame };
+  return { newGame, continueGame, saveGame, loadGame };
 };
 
 export default useSettings;

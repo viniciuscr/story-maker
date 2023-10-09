@@ -1,6 +1,5 @@
 import {
   configureStore,
-  createAction,
   createListenerMiddleware,
   isAnyOf,
 } from "@reduxjs/toolkit";
@@ -14,10 +13,7 @@ import statusReducer, { setStatus } from "../features/status/statusSlice";
 import directionReducer from "../features/direction/directionSlice";
 import { pushDirection } from "../features/direction/directionSlice";
 import titleScreenReducer from "../features/settings/SettingsSlice";
-
 const listenerMiddleware = createListenerMiddleware();
-
-export const startNewGame = createAction("NEW_GAME");
 
 listenerMiddleware.startListening({
   matcher: isAnyOf(setDialogues, nextDialogue),
