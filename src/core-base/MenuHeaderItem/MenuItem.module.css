@@ -1,0 +1,12 @@
+.item {
+  cursor: pointer;
+  list-style-type: none;
+  padding: 10px;
+  user-select: none;
+  font-weight: bold;
+}
+
+.itemActive {
+  background-color: aqua;
+  color: var(--text-color);
+}

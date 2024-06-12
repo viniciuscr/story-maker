@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 96vh;
+  background: var(--background-color);
+  background: var(--background-radial-gradient);
+  padding: 2vh;
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+  column-width: 300px;
+  column-count: auto;
+}
+.itemMenu {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,145 @@
+.name {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.dialogBox {
+  padding: 1rem 1rem 0 1rem;
+  background: var(--background-linear-gradient);
+  border-radius: var(--border-radius);
+}
+
+.portrait {
+  border-radius: var(--border-radius);
+  border: var(--border-line);
+}
+.portrait img:hover {
+  --webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.text {
+  color: var(--text-color);
+  margin: 0;
+}
+.choicesBox {
+  margin: auto;
+  padding: 0;
+  width: 70vw;
+}
+
+.choice {
+  list-style-type: none;
+  text-align: center;
+}
+
+.choice button {
+  background: none;
+  height: 3rem;
+  width: 100%;
+  border: solid 1px var(--box-bg-color-accent);
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.choice button:hover {
+  background-color: var(--box-bg-color-accent);
+  color: var(--text-color-accent);
+}
+
+.escapeMenu {
+  background: var(--background-color);
+  background: var(--background-radial-gradient);
+}
+
+.itemMenu {
+  border-radius: var(--border-radius);
+  border: var(--border-line);
+  background-color: var(--box-bg-color-accent);
+}
+
+.listItem {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.listItem:hover {
+  background-color: var(--hover-color);
+}
+
+/** UI Menus */
+
+h1.ui {
+  text-transform: uppercase;
+  font-style: italic;
+  text-shadow: 5px -5px 5px var(--shadows-color),
+    10px -10px 10px var(--shadows-color);
+
+  margin: 0;
+  padding: 0;
+}
+
+h1.ui,
+h2.ui,
+h3.ui,
+h4.ui,
+h5.ui,
+h6.ui {
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+h4.ui {
+  font-size: 15px;
+}
+.dimmed {
+  color: var(--text-color-dimmed);
+}
+h5.ui {
+  font-size: 13px;
+  color: var(--text-color-dimmed);
+}
+.menuContent {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.menuHeader {
+  margin: 0;
+  padding: 3px;
+  display: flex;
+  justify-content: space-between;
+  width: 40rem;
+  border-radius: var(--border-radius);
+  border: var(--border-line);
+  background-color: var(--secondary-color);
+  color: var(--text-color--accent);
+  text-transform: uppercase;
+}
+.itemMenuHeader {
+  flex: 1;
+  text-align: center;
+  border-radius: var(--border-radius);
+}
+
+.menuCorebutton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: large;
+}
+
+.defaultClickEffect {
+  cursor: pointer;
+}
+.defaultClickEffect:hover {
+  transform: scale(1.05);
+}
+.defaultClickEffect:active {
+  transform: scale(0.99);
+}
