@@ -1,11 +1,12 @@
 import React from "react";
-import structuralStyles from "./LoadGameScreen.module.css";
+import structuralStyles from "./SaveGameScreen.module.css";
 
 import MenuItem from "../../core-base/MenuItem";
 import { Text } from "../../core-base/Text";
 
-import useLoadGame from "./useLoadGame";
+import useSaveGame from "./useSaveGame";
 import MenuTemplate from "../../core-base/core-ui/MenuCore";
+import useSaveManer from "../../core-base/saveManager/useSaveManager";
 import { useSelector } from "react-redux";
 import { selectManualSaves } from "../../core-base/saveManager/saveManagerSlice";
 
@@ -21,33 +22,21 @@ const ItemContent = ({ saveSlot, time }) => (
   </>
 );
 
-const LoadGameScreen = () => {
-  const { toggleMenu, loadGame } = useLoadGame();
+const SaveGameScreen = () => {
+  const { toggleMenu } = useSaveGame();
+  const { saveOverride } = useSaveManer();
   const manualSaves = useSelector(selectManualSaves);
 
-  const savedGames = [
-    {
-      label: (
-        <ItemContent
-          saveSlot="Auto Save"
-          time={new Date().toLocaleDateString()}
-        />
-      ),
-      action: () => {},
-    },
-    ...manualSaves.map((save) => ({
-      label: (
-        <ItemContent saveSlot={`Slot ${save.saveSlot}`} time={save.text} />
-      ),
-      action: () => loadGame(save),
-    })),
-  ];
+  const savedGames = manualSaves.map((save) => ({
+    label: <ItemContent saveSlot={`Slot ${save.saveSlot}`} time={save.text} />,
+    action: () => saveOverride(save.saveSlot),
+  }));
 
   return (
     <MenuTemplate
-      title="Load Game"
-      subtitle="Select a save to load"
-      active="loadGame"
+      title="Save Game"
+      subtitle="Select a slot to save"
+      active="saveGame"
       toggleMenu={toggleMenu}
     >
       <ul className={structuralStyles.list}>
@@ -64,4 +53,4 @@ const LoadGameScreen = () => {
   );
 };
 
-export default LoadGameScreen;
+export default SaveGameScreen;

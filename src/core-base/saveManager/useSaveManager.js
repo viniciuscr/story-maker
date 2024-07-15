@@ -1,18 +1,25 @@
-import { useDispatch } from "react-redux";
-import { newSave, saveOverride } from "./saveManagerSlice";
+import { useDispatch, useStore } from "react-redux";
+import { overrideSave } from "./saveManagerSlice";
 
-const useSettings = () => {
+const useSaveManer = () => {
   const dispatch = useDispatch();
+  const store = useStore();
+  const date = new Date().toLocaleString(undefined, {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    weekday: "long",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
 
-  const saveNew = (manualSave) => {
-    dispatch(newSave(manualSave));
+  const saveOverride = (saveSlot) => {
+    localStorage.setItem(saveSlot, JSON.stringify(store.getState()));
+    dispatch(overrideSave({ saveSlot, text: date }));
   };
 
-  const saveOverride = () => {
-    dispatch(saveOverride(savePosition));
-  };
-
-  return { saveNew, loadGame };
+  return { saveOverride };
 };
 
-export default useSettings;
+export default useSaveManer;

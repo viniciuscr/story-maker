@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const SettingsSlice = createSlice({
-  name: "settingsScreen",
+const SaveGameSlice = createSlice({
+  name: "saveGameScreen",
   initialState: {
     show: false,
   },
@@ -17,9 +17,8 @@ const SettingsSlice = createSlice({
   },
 });
 
-export const { show, hide } = SettingsSlice.actions;
+export const { show, hide } = SaveGameSlice.actions;
 
-export const selectIsShowingSettingsScreen = (state) =>
-  state.settingsScreen.show;
+export const selectIsShowingSaveGame = (state) => state.saveGameScreen.show;
 
-export default SettingsSlice.reducer;
+export default SaveGameSlice.reducer;

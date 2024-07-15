@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { goToScene } from "../scene/sceneSlice";
-import { hide, newSave } from "./settingsSlice";
+import { hide } from "./settingsSlice";
 import { startNewGame } from "../../app/extraReducers";
 
 const useSettings = () => {
@@ -15,9 +15,7 @@ const useSettings = () => {
     dispatch(hide());
   };
 
-  const saveGame = (manualSave) => {
-    dispatch(newSave(manualSave));
-  };
+  const saveGame = () => {};
 
   const loadGame = () => {};
 

@@ -5,9 +5,13 @@ import MenuHeaderItem from "../../MenuHeaderItem";
 import { Text } from "../../Text";
 
 import { useDispatch } from "react-redux";
+import useLoadGameScreen from "../../../features/loadGameScreen/useLoadGame";
+import useSaveGameScreen from "../../../features/saveGameScreen/useSaveGame";
 
 const MenuTemplate = ({ children, title, subtitle, toggleMenu, active }) => {
   const dispatch = useDispatch();
+  const { showLoadGameScreen } = useLoadGameScreen();
+  const { showSaveGameScreen } = useSaveGameScreen();
 
   return (
     <div
@@ -20,10 +24,20 @@ const MenuTemplate = ({ children, title, subtitle, toggleMenu, active }) => {
         <ul className={personalizedStyles.menuHeader}>
           <MenuHeaderItem
             active={active === "loadGame"}
-            action={() => {}}
+            action={() => {
+              showLoadGameScreen();
+              toggleMenu();
+            }}
             label="Load Game"
           />
-          <MenuHeaderItem action={() => {}} label="Save Game" />
+          <MenuHeaderItem
+            active={active === "saveGame"}
+            action={() => {
+              showSaveGameScreen();
+              toggleMenu();
+            }}
+            label="Save Game"
+          />
           <MenuHeaderItem action={() => {}} label="Gallery" />
           <MenuHeaderItem action={() => {}} label="Settings" />
         </ul>
@@ -45,7 +59,7 @@ const MenuTemplate = ({ children, title, subtitle, toggleMenu, active }) => {
             personalizedStyles.defaultClickEffect,
             personalizedStyles.menuCorebutton
           )}
-          onClick={() => dispatch(toggleMenu)}
+          onClick={() => toggleMenu()}
         >
           Close
         </button>

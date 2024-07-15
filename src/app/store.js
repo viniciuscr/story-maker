@@ -15,7 +15,8 @@ import { pushDirection } from "../features/direction/directionSlice";
 import titleScreenReducer from "../features/titleScreen/titleScreenSlice";
 import settingsScreenReducer from "../features/settings/settingsSlice";
 import loadGameScreenReducer from "../features/loadGameScreen/loadGameSlice";
-
+import saveManagerReducer from "../core-base/saveManager/saveManagerSlice";
+import saveGameScreenReducer from "../features/saveGameScreen/saveGameSlice";
 const listenerMiddleware = createListenerMiddleware();
 
 listenerMiddleware.startListening({
@@ -53,6 +54,8 @@ const store = configureStore({
     titleScreen: titleScreenReducer,
     settingsScreen: settingsScreenReducer,
     loadGameScreen: loadGameScreenReducer,
+    saveGameScreen: saveGameScreenReducer,
+    saves: saveManagerReducer,
   },
   preloadedState: {
     ...JSON.parse(localStorage.getItem("autosave")),
