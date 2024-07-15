@@ -7,12 +7,14 @@ const useLoadGameScreen = () => {
 
   const loadGame = (save) => {
     if (save.text === "empty") return;
-    console.debug("loading save", save);
+
+    console.log(localStorage.getItem(save.saveSlot));
     const saves = JSON.parse(localStorage.getItem("autosave")).saves ?? [];
+    console.log(saves);
     localStorage.setItem(
       "autosave",
       JSON.stringify({
-        ...localStorage.getItem(save.saveSlot),
+        ...JSON.parse(localStorage.getItem(save.saveSlot)),
         saves: saves,
       })
     );

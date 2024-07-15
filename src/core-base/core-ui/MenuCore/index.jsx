@@ -26,7 +26,7 @@ const MenuTemplate = ({ children, title, subtitle, toggleMenu, active }) => {
             active={active === "loadGame"}
             action={() => {
               showLoadGameScreen();
-              toggleMenu();
+              active !== "loadGame" && toggleMenu();
             }}
             label="Load Game"
           />
@@ -34,7 +34,7 @@ const MenuTemplate = ({ children, title, subtitle, toggleMenu, active }) => {
             active={active === "saveGame"}
             action={() => {
               showSaveGameScreen();
-              toggleMenu();
+              active !== "saveGame" && toggleMenu();
             }}
             label="Save Game"
           />
