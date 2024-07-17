@@ -26,16 +26,8 @@ const LoadGameScreen = () => {
   const manualSaves = useSelector(selectManualSaves);
 
   const savedGames = [
-    {
-      label: (
-        <ItemContent
-          saveSlot="Auto Save"
-          time={new Date().toLocaleDateString()}
-        />
-      ),
-      action: () => {},
-    },
     ...manualSaves.map((save) => ({
+      saveSlot: save.saveSlot,
       label: (
         <ItemContent saveSlot={`Slot ${save.saveSlot}`} time={save.text} />
       ),
@@ -54,7 +46,7 @@ const LoadGameScreen = () => {
         {savedGames.map((item) => (
           <MenuItem
             extraClass={[structuralStyles.itemMenu]}
-            key={item}
+            key={item.saveSlot}
             action={item.action}
             label={item.label}
           />

@@ -5,7 +5,6 @@ import personalizedStyles from "../../personalized.module.css";
 const MenuHeaderItem = ({ label, action, extraClass, active }) => {
   return (
     <li
-      act
       className={classNames(
         active ? styles.itemActive : "",
         styles.item,

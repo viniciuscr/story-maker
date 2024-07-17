@@ -29,7 +29,7 @@ const Welcome = () => {
               personalizedStyles.listItem,
               personalizedStyles.itemMenu,
             ]}
-            key={item}
+            key={item.label}
             action={item.action}
             label={item.label}
           />
