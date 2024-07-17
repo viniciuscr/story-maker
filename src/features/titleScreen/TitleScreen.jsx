@@ -1,8 +1,7 @@
 import structuralStyles from "./TitleScreen.module.css";
 import useTitleScreen from "./useTitleScreen";
 import MenuItem from "../../core-base/MenuItem";
-import classNames from "classnames";
-import personalizedStyles from "../../personalized.module.css";
+import { Text } from "../../core-base/Text";
 
 const Welcome = () => {
   const { newGame, continueGame, showLoadGame, showSettings } =
@@ -16,22 +15,19 @@ const Welcome = () => {
   ];
 
   return (
-    <div
-      className={classNames(
-        structuralStyles.container,
-        personalizedStyles.escapeMenu
-      )}
-    >
+    <div className={structuralStyles.container}>
+      <img width="400px" src="/logo.png" alt="Game Logo" />
       <ul className={structuralStyles.list}>
         {items.map((item) => (
           <MenuItem
-            extraClass={[
-              personalizedStyles.listItem,
-              personalizedStyles.itemMenu,
-            ]}
+            extraClass={[structuralStyles.itemMenu]}
             key={item.label}
             action={item.action}
-            label={item.label}
+            label={
+              <Text type="ui" as="h3">
+                {item.label}
+              </Text>
+            }
           />
         ))}
       </ul>

@@ -3,12 +3,19 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background:var(--background-color);
-  background:var(--background-radial-gradient)
+  background: var(--background-color);
+  background: var(--background-radial-gradient);
 }
 
 .list {
   padding: 0;
-  width: 400px;
+  margin: 0;
+  column-width: 400px;
+  column-count: auto;
 }
 
+.itemMenu {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
