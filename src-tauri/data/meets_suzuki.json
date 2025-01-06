@@ -1,0 +1,149 @@
+{
+  "stage": "Conversation",
+  "scenery": "./scenes/second-scene/desktop.png",
+  "settings": {
+    "keepActorsInScene": true
+  },
+  "actors": {
+    "suzuki": {
+      "id": 1,
+      "name": "Suzuki Kino",
+      "gender": "female",
+      "costume": {
+        "unidentified": {
+          "name": "???",
+          "portrait": "./actors/suzuki/portrait.png",
+          "bodyImage": "./actors/suzuki/school_uniform.png"
+        },
+        "default": {
+          "name": "Kino Suzuki",
+          "portrait": "./actors/suzuki/portrait.png",
+          "bodyImage": "./actors/suzuki/school_uniform.png"
+        }
+      }
+    },
+    "aykawa": {
+      "id": 2,
+      "name": "Aykawa Miso",
+      "gender": "female",
+      "costume": {
+        "default": {
+          "name": "Aykawa",
+          "portrait": "./actors/aykawa/portrait.png",
+          "bodyImage": "./actors/aykawa/school_uniform.png"
+        }
+      }
+    }
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "text": ["Good morning Aykawa", "Who is your friend?"],
+      "actor": {
+        "identity": "suzuki",
+        "costume": "unidentified",
+        "position": "center"
+      },
+      "triggers": [
+        {
+          "effect": "enters",
+          "value": { "affected": "suzuki" },
+          "when": "before"
+        }
+      ],
+      "next": {
+        "dialogue": 2
+      }
+    },
+    {
+      "id": 2,
+      "text": [
+        "(This one is so cute!",
+        "After 20min listen to Aykawa nosense it must be some sort of compensation from Haven",
+        "Should I take the lead myself or let Aykawa introduces me and risk some other nonses comming from her?)"
+      ],
+      "choices": [
+        {
+          "text": "I should take the iniciative and avoid some confusion comming from Aykawa.",
+          "triggers": [
+            {
+              "effect": "update_status",
+              "value": {
+                "path": "main.charisma",
+                "value": -1
+              }
+            },
+            {
+              "effect": "update_status",
+              "value": {
+                "path": "characters.aykawa.affection",
+                "value": -10
+              }
+            },
+            {
+              "effect": "update_status",
+              "value": {
+                "path": "characters.suzuki.affection",
+                "value": 2
+              }
+            },
+            {
+              "effect": "update_status",
+              "value": {
+                "path": "characters.suzuki.name",
+                "value": "Kino"
+              }
+            }
+          ],
+          "next": {
+            "dialogue": 4
+          }
+        },
+        {
+          "text": "It is best to wait for Aykawa, if I cut her out now it may looks rude.",
+          "triggers": [
+            {
+              "effect": "update_status",
+              "value": {
+                "path": "characters.aykawa.friendship",
+                "value": 2
+              }
+            },
+            {
+              "effect": "update_status",
+              "value": {
+                "path": "characters.suzuki.name",
+                "value": "Kamura"
+              }
+            }
+          ],
+          "next": {
+            "dialogue": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": [
+        "Hi Suzuki!",
+        "This is.... This is... ammnn",
+        "This is Kamura and he is starting at Dalion today."
+      ],
+      "actor": { "identity": "suzuki", "position": "right" },
+      "next": {
+        "dialogue": 3
+      }
+    },
+    {
+      "id": 4,
+      "text": [
+        "Hi Suzuki",
+        "My name is Kamura Kino, but you can call me just Kino"
+      ],
+      "next": {
+        "dialogue": 4
+      }
+    }
+  ]
+}

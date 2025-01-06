@@ -1,15 +1,7 @@
-# story-maker
+# Tauri + React
 
-To install dependencies:
+This template should help get you started developing with Tauri and React in Vite.
 
-```bash
-bun install
-```
+## Recommended IDE Setup
 
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.1.12. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)

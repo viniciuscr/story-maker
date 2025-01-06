@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { setDialogues } from "../dialogue/dialogueSlice";
 import { startNewGame } from "../../app/extraReducers";
+import { invoke } from "@tauri-apps/api/core";
 
 export const STAGE_DIRECTIONS = { leave: "leave", enters: "enters" };
 
 //TODO: move to other file
 const fetchScene = async (scene) =>
-  await (await fetch(`./data/${scene}.json`)).json();
+  JSON.parse((await invoke("fetch_scene", { scene })));
 
 export const sceneSlice = createSlice({
   name: "scene",
