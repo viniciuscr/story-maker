@@ -12,9 +12,12 @@ const TitleScreenSlice = createSlice({
     hide: (state) => {
       state.show = false;
     },
+    toggle: (state) => {
+      state.show = !state.show;
+    },
   },
 });
 
-export const { show, hide } = TitleScreenSlice.actions;
+export const { show, hide, toggle } = TitleScreenSlice.actions;
 export const selectIsShowingTitleScreen = (state) => state.titleScreen.show;
 export default TitleScreenSlice.reducer;
