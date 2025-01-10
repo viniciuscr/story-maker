@@ -1,22 +1,15 @@
-import {
-  configureStore,
-  createListenerMiddleware,
-  isAnyOf,
-} from "@reduxjs/toolkit";
+import { configureStore, createListenerMiddleware, isAnyOf } from '@reduxjs/toolkit';
 
-import sceneReducer, { enters } from "../features/scene/sceneSlice";
-import dialogueReducer, {
-  nextDialogue,
-  setDialogues,
-} from "../features/dialogue/dialogueSlice";
-import statusReducer, { setStatus } from "../features/status/statusSlice";
-import directionReducer from "../features/direction/directionSlice";
-import { pushDirection } from "../features/direction/directionSlice";
-import titleScreenReducer from "../features/titleScreen/titleScreenSlice";
-import settingsScreenReducer from "../features/settings/settingsSlice";
-import loadGameScreenReducer from "../features/loadGameScreen/loadGameSlice";
-import saveManagerReducer from "../core-base/saveManager/saveManagerSlice";
-import saveGameScreenReducer from "../features/saveGameScreen/saveGameSlice";
+import sceneReducer, { enters } from '../features/scene/sceneSlice';
+import dialogueReducer, { nextDialogue, setDialogues } from '../features/dialogue/dialogueSlice';
+import statusReducer, { setStatus } from '../features/status/statusSlice';
+import directionReducer from '../features/direction/directionSlice';
+import { pushDirection } from '../features/direction/directionSlice';
+import titleScreenReducer from '../features/titleScreen/titleScreenSlice';
+import settingsScreenReducer from '../features/settings/settingsSlice';
+import loadGameScreenReducer from '../features/loadGameScreen/loadGameSlice';
+import saveManagerReducer from '../core-base/saveManager/saveManagerSlice';
+import saveGameScreenReducer from '../features/saveGameScreen/saveGameSlice';
 const listenerMiddleware = createListenerMiddleware();
 
 listenerMiddleware.startListening({
@@ -26,10 +19,10 @@ listenerMiddleware.startListening({
 
     current?.triggers?.forEach(({ effect, value }) => {
       console.debug(`Pushing trigger [${effect}]`, value);
-      if (effect === "update_status") {
+      if (effect === 'update_status') {
         setStatus(value.value, value.path);
       }
-      if (effect === "enters") {
+      if (effect === 'enters') {
         listenerApi.dispatch(pushDirection(value.affected));
       }
     });
@@ -58,17 +51,16 @@ const store = configureStore({
     saves: saveManagerReducer,
   },
   preloadedState: {
-    ...JSON.parse(localStorage.getItem("autosave")),
+    ...JSON.parse(localStorage.getItem('autosave')),
     titleScreen: { show: true },
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().prepend(listenerMiddleware.middleware),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().prepend(listenerMiddleware.middleware),
 });
 
 store.subscribe(() => {
   const state = store.getState();
   //TODO move autosave to constant
-  localStorage.setItem("autosave", JSON.stringify(state));
+  localStorage.setItem('autosave', JSON.stringify(state));
 });
 
 export default store;

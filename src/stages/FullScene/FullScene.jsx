@@ -1,7 +1,7 @@
-import TextBox from "../../features/textBox/TextBox";
-import structuralStyles from "./FullScene.module.css";
-import { selectScenery } from "../../features/scene/sceneSlice";
-import { useSelector } from "react-redux";
+import TextBox from '../../features/textBox/TextBox';
+import structuralStyles from './FullScene.module.css';
+import { selectScenery } from '../../features/scene/sceneSlice';
+import { useSelector } from 'react-redux';
 
 const FullScene = () => {
   const scenery = useSelector(selectScenery);
@@ -14,7 +14,7 @@ const FullScene = () => {
       className={structuralStyles.scenario}
     >
       <div className={structuralStyles.scene}>
-        <TextBox translucent  />
+        <TextBox translucent />
       </div>
     </div>
   );

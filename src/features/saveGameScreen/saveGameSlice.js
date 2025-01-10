@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const SaveGameSlice = createSlice({
-  name: "saveGameScreen",
+  name: 'saveGameScreen',
   initialState: {
     show: false,
   },

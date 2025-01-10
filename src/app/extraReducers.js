@@ -1,3 +1,3 @@
-import { createAction } from "@reduxjs/toolkit";
+import { createAction } from '@reduxjs/toolkit';
 
-export const startNewGame = createAction("NEW_GAME");
+export const startNewGame = createAction('NEW_GAME');

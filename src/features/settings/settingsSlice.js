@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const SettingsSlice = createSlice({
-  name: "settingsScreen",
+  name: 'settingsScreen',
   initialState: {
     show: false,
   },
@@ -19,7 +19,6 @@ const SettingsSlice = createSlice({
 
 export const { show, hide } = SettingsSlice.actions;
 
-export const selectIsShowingSettingsScreen = (state) =>
-  state.settingsScreen.show;
+export const selectIsShowingSettingsScreen = (state) => state.settingsScreen.show;
 
 export default SettingsSlice.reducer;

@@ -1,9 +1,9 @@
-import TextBox from "../../features/textBox/TextBox";
-import structuralStyles from "./Conversation.module.css";
-import { selectScenery } from "../../features/scene/sceneSlice";
-import { useSelector } from "react-redux";
-import OnSpot from "./OnSpot";
-import useActor from "../../features/actor/useActor";
+import TextBox from '../../features/textBox/TextBox';
+import structuralStyles from './Conversation.module.css';
+import { selectScenery } from '../../features/scene/sceneSlice';
+import { useSelector } from 'react-redux';
+import OnSpot from './OnSpot';
+import useActor from '../../features/actor/useActor';
 
 const Conversation = () => {
   const scenery = useSelector(selectScenery);

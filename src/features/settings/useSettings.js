@@ -1,7 +1,7 @@
-import { useDispatch } from "react-redux";
-import { goToScene } from "../scene/sceneSlice";
-import { hide } from "./settingsSlice";
-import { startNewGame } from "../../app/extraReducers";
+import { useDispatch } from 'react-redux';
+import { goToScene } from '../scene/sceneSlice';
+import { hide } from './settingsSlice';
+import { startNewGame } from '../../app/extraReducers';
 
 const useSettings = () => {
   const dispatch = useDispatch();
@@ -9,7 +9,7 @@ const useSettings = () => {
   const newGame = () => {
     dispatch(hide());
     dispatch(startNewGame());
-    dispatch(goToScene("intro"));
+    dispatch(goToScene('intro'));
   };
   const continueGame = () => {
     dispatch(hide());

@@ -1,12 +1,9 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect } from 'react';
 
 const useKeyBinder = (key, action) => {
-  const checkBinders = useCallback(
-    (event) => event.key === key && action(),
-    [action, key]
-  );
+  const checkBinders = useCallback((event) => event.key === key && action(), [action, key]);
   useEffect(() => {
-    document.addEventListener("keydown", checkBinders, false);
+    document.addEventListener('keydown', checkBinders, false);
   }, []);
 
   return true;

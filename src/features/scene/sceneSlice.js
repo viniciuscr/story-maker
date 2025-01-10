@@ -1,16 +1,15 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { setDialogues } from "../dialogue/dialogueSlice";
-import { startNewGame } from "../../app/extraReducers";
-import { invoke } from "@tauri-apps/api/core";
+import { createSlice } from '@reduxjs/toolkit';
+import { setDialogues } from '../dialogue/dialogueSlice';
+import { startNewGame } from '../../app/extraReducers';
+import { invoke } from '@tauri-apps/api/core';
 
-export const STAGE_DIRECTIONS = { leave: "leave", enters: "enters" };
+export const STAGE_DIRECTIONS = { leave: 'leave', enters: 'enters' };
 
 //TODO: move to other file
-const fetchScene = async (scene) =>
-  JSON.parse((await invoke("fetch_scene", { scene })));
+const fetchScene = async (scene) => JSON.parse(await invoke('fetch_scene', { scene }));
 
 export const sceneSlice = createSlice({
-  name: "scene",
+  name: 'scene',
   initialState: {
     currentScene: {},
     onStage: [],
@@ -32,9 +31,7 @@ export const sceneSlice = createSlice({
       return { ...state, onStage: [...state.onStage, action.payload] };
     },
     exits: (state, action) => {
-      state.onStage = state.onStage.filter(
-        (actors) => actors.name !== action.payload
-      );
+      state.onStage = state.onStage.filter((actors) => actors.name !== action.payload);
       return state;
     },
   },

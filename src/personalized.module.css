@@ -1,7 +1,7 @@
 .name {
   font-size: 20px;
   font-weight: bold;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .dialogBox {
@@ -59,7 +59,8 @@
 h1.ui {
   text-transform: uppercase;
   font-style: italic;
-  text-shadow: 5px -5px 5px var(--shadows-color),
+  text-shadow:
+    5px -5px 5px var(--shadows-color),
     10px -10px 10px var(--shadows-color);
 
   margin: 0;

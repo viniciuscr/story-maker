@@ -1,6 +1,6 @@
-import classNames from "classnames";
-import styles from "./MenuItem.module.css";
-import personalizedStyles from "../../personalized.module.css";
+import classNames from 'classnames';
+import styles from './MenuItem.module.css';
+import personalizedStyles from '../../personalized.module.css';
 
 const MenuItem = ({ label, action, extraClass }) => {
   return (
@@ -9,7 +9,7 @@ const MenuItem = ({ label, action, extraClass }) => {
         styles.item,
         personalizedStyles.itemMenu,
         personalizedStyles.defaultClickEffect,
-        extraClass
+        extraClass,
       )}
       onClick={() => action()}
     >

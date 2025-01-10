@@ -1,16 +1,16 @@
-import classNames from "classnames";
-import styles from "./MenuItem.module.css";
-import personalizedStyles from "../../personalized.module.css";
+import classNames from 'classnames';
+import styles from './MenuItem.module.css';
+import personalizedStyles from '../../personalized.module.css';
 
 const MenuHeaderItem = ({ label, action, extraClass, active }) => {
   return (
     <li
       className={classNames(
-        active ? styles.itemActive : "",
+        active ? styles.itemActive : '',
         styles.item,
         personalizedStyles.itemMenuHeader,
         personalizedStyles.defaultClickEffect,
-        extraClass
+        extraClass,
       )}
       onClick={() => action()}
     >

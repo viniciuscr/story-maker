@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const TitleScreenSlice = createSlice({
-  name: "titleScreen",
+  name: 'titleScreen',
   initialState: {
     show: true,
   },

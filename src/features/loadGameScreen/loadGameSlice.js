@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const LoadGameSlice = createSlice({
-  name: "loadGameScreen",
+  name: 'loadGameScreen',
   initialState: {
     show: false,
   },

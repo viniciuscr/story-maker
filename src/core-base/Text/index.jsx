@@ -1,5 +1,5 @@
-import classNames from "classnames";
-import personalizedStyles from "../../personalized.module.css";
+import classNames from 'classnames';
+import personalizedStyles from '../../personalized.module.css';
 /**
  * Renders a text component with customizable styling.
  *
@@ -10,15 +10,14 @@ import personalizedStyles from "../../personalized.module.css";
  * @return {ReactElement} The rendered Text component.
  */
 export const Text = ({ children, as, type, dimmed }) => {
-  const Component = as || "p";
+  const Component = as || 'p';
   return (
     <Component
       className={classNames(personalizedStyles[type], {
-        [personalizedStyles["dimmed"]]: dimmed,
+        [personalizedStyles['dimmed']]: dimmed,
       })}
     >
       {children}
     </Component>
   );
 };
-

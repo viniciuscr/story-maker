@@ -1,17 +1,16 @@
-import structuralStyles from "./TitleScreen.module.css";
-import useTitleScreen from "./useTitleScreen";
-import MenuItem from "../../core-base/MenuItem";
-import { Text } from "../../core-base/Text";
+import structuralStyles from './TitleScreen.module.css';
+import useTitleScreen from './useTitleScreen';
+import MenuItem from '../../core-base/MenuItem';
+import { Text } from '../../core-base/Text';
 
 const Welcome = () => {
-  const { newGame, continueGame, showLoadGame, showSettings } =
-    useTitleScreen();
+  const { newGame, continueGame, showLoadGame, showSettings } = useTitleScreen();
   const items = [
-    { label: "New Game", action: newGame },
-    { label: "Continue", action: continueGame },
-    { label: "Load Game", action: showLoadGame },
-    { label: "Settings", action: showSettings },
-    { label: "Exit" },
+    { label: 'New Game', action: newGame },
+    { label: 'Continue', action: continueGame },
+    { label: 'Load Game', action: showLoadGame },
+    { label: 'Settings', action: showSettings },
+    { label: 'Exit' },
   ];
 
   return (

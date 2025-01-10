@@ -1,22 +1,22 @@
-import { useDispatch, useSelector } from "react-redux";
-import { hide, selectIsShowingLoadGame, show } from "./loadGameSlice";
+import { useDispatch, useSelector } from 'react-redux';
+import { hide, selectIsShowingLoadGame, show } from './loadGameSlice';
 
 const useLoadGameScreen = () => {
   const dispatch = useDispatch();
   const isShow = useSelector(selectIsShowingLoadGame);
 
   const loadGame = (save) => {
-    if (save.text === "empty") return;
+    if (save.text === 'empty') return;
 
     console.log(localStorage.getItem(save.saveSlot));
-    const saves = JSON.parse(localStorage.getItem("autosave")).saves ?? [];
+    const saves = JSON.parse(localStorage.getItem('autosave')).saves ?? [];
     console.log(saves);
     localStorage.setItem(
-      "autosave",
+      'autosave',
       JSON.stringify({
         ...JSON.parse(localStorage.getItem(save.saveSlot)),
         saves: saves,
-      })
+      }),
     );
     window.location.reload();
   };

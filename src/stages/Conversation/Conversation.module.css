@@ -18,10 +18,9 @@
   justify-content: space-between;
   width: 80vw;
   margin: auto;
-  
 }
 
-.onSpot > img{
+.onSpot > img {
   margin-top: 20vh;
   min-height: 120vh;
 }

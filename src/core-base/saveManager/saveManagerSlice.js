@@ -1,12 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const SaveManagerSlice = createSlice({
-  name: "saves",
+  name: 'saves',
   initialState: {
     manualSaves: [
       ...Array.from({ length: 12 }, (x, i) => ({
         saveSlot: i,
-        text: "empty",
+        text: 'empty',
       })),
     ],
   },

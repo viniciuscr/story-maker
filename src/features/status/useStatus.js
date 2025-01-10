@@ -1,6 +1,6 @@
-import { useDispatch } from "react-redux";
+import { useDispatch } from 'react-redux';
 
-import { setStatus, selectStatus } from "./statusSlice";
+import { setStatus, selectStatus } from './statusSlice';
 
 const useStatus = (defaultPath) => {
   const dispatch = useDispatch();

@@ -1,9 +1,9 @@
-import { useDispatch } from "react-redux";
-import { goToScene } from "../scene/sceneSlice";
-import { hide } from "./titleScreenSlice";
-import { startNewGame } from "../../app/extraReducers";
-import { show as showSettingsScreen } from "../settings/settingsSlice";
-import { show as showLoadGameScreen } from "../loadGameScreen/loadGameSlice";
+import { useDispatch } from 'react-redux';
+import { goToScene } from '../scene/sceneSlice';
+import { hide } from './titleScreenSlice';
+import { startNewGame } from '../../app/extraReducers';
+import { show as showSettingsScreen } from '../settings/settingsSlice';
+import { show as showLoadGameScreen } from '../loadGameScreen/loadGameSlice';
 
 const useTitleScreen = () => {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ const useTitleScreen = () => {
   const newGame = () => {
     dispatch(hide());
     dispatch(startNewGame());
-    dispatch(goToScene("intro"));
+    dispatch(goToScene('intro'));
   };
   const continueGame = () => {
     dispatch(hide());
