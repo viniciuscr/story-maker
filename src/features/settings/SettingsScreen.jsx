@@ -1,4 +1,3 @@
-import React from "react";
 import structuralStyles from "./Settings.module.css";
 import useSettings from "./useSettings";
 import MenuItem from "../../core-base/MenuItem";

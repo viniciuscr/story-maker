@@ -1,4 +1,3 @@
-import React from "react";
 import TextBox from "../../features/textBox/TextBox";
 import structuralStyles from "./FullScene.module.css";
 import { selectScenery } from "../../features/scene/sceneSlice";

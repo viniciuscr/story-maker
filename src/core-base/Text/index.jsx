@@ -22,9 +22,3 @@ export const Text = ({ children, as, type, dimmed }) => {
   );
 };
 
-Text.propTypes = {
-  children: PropTypes.node.isRequired,
-  as: PropTypes.string,
-  type: PropTypes.string,
-  dimmed: PropTypes.bool,
-};

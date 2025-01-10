@@ -1,4 +1,3 @@
-import React from "react";
 import structuralStyles from "./LoadGameScreen.module.css";
 
 import MenuItem from "../../core-base/MenuItem";

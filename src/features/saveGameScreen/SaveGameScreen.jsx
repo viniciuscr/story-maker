@@ -1,4 +1,4 @@
-import React from "react";
+
 import structuralStyles from "./SaveGameScreen.module.css";
 
 import MenuItem from "../../core-base/MenuItem";
@@ -54,8 +54,5 @@ const SaveGameScreen = () => {
   );
 };
 
-ItemContent.propTypes = {
-  saveSlot: PropTypes.string.isRequired,
-  time: PropTypes.string.isRequired,
-};
+
 export default SaveGameScreen;
