@@ -4,12 +4,11 @@ import structuralStyles from "./MenuCore.module.css";
 import MenuHeaderItem from "../../MenuHeaderItem";
 import { Text } from "../../Text";
 
-import { useDispatch } from "react-redux";
 import useLoadGameScreen from "../../../features/loadGameScreen/useLoadGame";
 import useSaveGameScreen from "../../../features/saveGameScreen/useSaveGame";
 
 const MenuTemplate = ({ children, title, subtitle, toggleMenu, active }) => {
-  const dispatch = useDispatch();
+
   const { showLoadGameScreen } = useLoadGameScreen();
   const { showSaveGameScreen } = useSaveGameScreen();
 
@@ -38,8 +37,8 @@ const MenuTemplate = ({ children, title, subtitle, toggleMenu, active }) => {
             }}
             label="Save Game"
           />
-          <MenuHeaderItem action={() => {}} label="Gallery" />
-          <MenuHeaderItem action={() => {}} label="Settings" />
+          <MenuHeaderItem action={() => { }} label="Gallery" />
+          <MenuHeaderItem action={() => { }} label="Settings" />
         </ul>
       </div>
       <div className={personalizedStyles.menuContent}>

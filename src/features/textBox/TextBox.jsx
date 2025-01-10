@@ -87,4 +87,28 @@ const TextBox = ({ children, translucent, ...props }) => {
   );
 };
 
+TextBox.propTypes = {
+  children: PropTypes.node,
+  translucent: PropTypes.bool,
+};
+
+Choices.propTypes = {
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
+
+Dialogue.propTypes = {
+  text: PropTypes.arrayOf(PropTypes.string).isRequired,
+  next: PropTypes.object.isRequired,
+};
+
+Portrait.propTypes = {
+  actor: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    portrait: PropTypes.string.isRequired,
+  }).isRequired,
+};
 export default TextBox;

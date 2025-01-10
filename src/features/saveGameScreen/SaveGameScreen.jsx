@@ -54,4 +54,8 @@ const SaveGameScreen = () => {
   );
 };
 
+ItemContent.propTypes = {
+  saveSlot: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired,
+};
 export default SaveGameScreen;

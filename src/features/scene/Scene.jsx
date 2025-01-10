@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useSelector } from "react-redux";
 import { selectStage } from "./sceneSlice";
 import FullScene from "../../stages/FullScene/FullScene";
