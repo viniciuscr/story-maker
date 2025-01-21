@@ -24,3 +24,11 @@
   margin-top: 20vh;
   min-height: 120vh;
 }
+
+.actor {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}

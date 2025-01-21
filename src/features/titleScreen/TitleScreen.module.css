@@ -10,7 +10,7 @@
 .list {
   padding: 0;
   margin: 0;
-  column-width: 400px;
+  min-width: 400px;
   column-count: auto;
 }
 
