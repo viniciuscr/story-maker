@@ -13,7 +13,8 @@ const TextBox = ({ children, translucent, ...props }) => {
 
   const moreRef = useRef();
 
-  useKeyBinder(' ', () => moreRef.current?.click());
+  //TODO : only use repetable = true if is the second time, or set to skip all
+  useKeyBinder(' ', () => moreRef.current?.click(), true);
 
   const Choices = ({ options }) => (
     <ul className={personalizedStyles.choicesBox}>
