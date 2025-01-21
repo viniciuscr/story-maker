@@ -1,5 +1,5 @@
 {
-  "scenery": "./scenes/first-scene/desktop.jpg",
+  "scenery": "/scenes/first-scene/desktop.jpg",
   "stage": "FullScene",
   "dialogue": [
     {
@@ -8,7 +8,7 @@
       "actor": {
         "name": "???",
         "gender": "female",
-        "portrait": "./actors/aykawa/portrait.png"
+        "portrait": "/actors/aykawa/portrait.png"
       },
       "triggers": [
         {
@@ -41,7 +41,7 @@
       "actor": {
         "name": "???",
         "gender": "female",
-        "portrait": "./actors/aykawa/portrait.png"
+        "portrait": "/actors/aykawa/portrait.png"
       },
       "next": {
         "dialogue": 4
@@ -78,7 +78,7 @@
       "actor": {
         "name": "Aykawa",
         "gender": "female",
-        "portrait": "./actors/aykawa/portrait.png"
+        "portrait": "/actors/aykawa/portrait.png"
       },
       "next": {
         "dialogue": 7
@@ -114,7 +114,7 @@
       "actor": {
         "name": "Aykawa",
         "gender": "female",
-        "portrait": "./actors/aykawa/portrait.png"
+        "portrait": "/actors/aykawa/portrait.png"
       },
       "next": {
         "dialogue": 10
@@ -133,7 +133,7 @@
       "actor": {
         "name": "Aykawa",
         "gender": "female",
-        "portrait": "./actors/aykawa/portrait.png"
+        "portrait": "/actors/aykawa/portrait.png"
       },
       "next": {
         "dialogue": 12
@@ -161,7 +161,7 @@
       "actor": {
         "name": "Aykawa",
         "gender": "female",
-        "portrait": "./actors/aykawa/portrait.png"
+        "portrait": "/actors/aykawa/portrait.png"
       },
       "next": {
         "dialogue": 14

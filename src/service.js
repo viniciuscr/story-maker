@@ -3,7 +3,9 @@ import { invoke } from '@tauri-apps/api/core';
 const isBrowser = () => typeof window.__TAURI_INTERNALS__ === 'undefined';
 
 const useFetch = () => {
-  const fetchScene = async (scene) => JSON.parse(await fetch(`data/${scene}`).then((res) => res.json()));
+  const fetchScene = async (scene) => {
+    return await fetch(`/data/${scene}.json`).then((res) => res.json());
+  };
 
   return {
     fetchScene,

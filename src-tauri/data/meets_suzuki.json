@@ -1,6 +1,6 @@
 {
   "stage": "Conversation",
-  "scenery": "./scenes/second-scene/desktop.png",
+  "scenery": "/scenes/second-scene/desktop.png",
   "settings": {
     "keepActorsInScene": true
   },
@@ -12,13 +12,13 @@
       "costume": {
         "unidentified": {
           "name": "???",
-          "portrait": "./actors/suzuki/portrait.png",
-          "bodyImage": "./actors/suzuki/school_uniform.png"
+          "portrait": "/actors/suzuki/portrait.png",
+          "bodyImage": "/actors/suzuki/school_uniform.png"
         },
         "default": {
           "name": "Kino Suzuki",
-          "portrait": "./actors/suzuki/portrait.png",
-          "bodyImage": "./actors/suzuki/school_uniform.png"
+          "portrait": "/actors/suzuki/portrait.png",
+          "bodyImage": "/actors/suzuki/school_uniform.png"
         }
       }
     },
@@ -29,8 +29,8 @@
       "costume": {
         "default": {
           "name": "Aykawa",
-          "portrait": "./actors/aykawa/portrait.png",
-          "bodyImage": "./actors/aykawa/school_uniform.png"
+          "portrait": "/actors/aykawa/portrait.png",
+          "bodyImage": "/actors/aykawa/school_uniform.png"
         }
       }
     }

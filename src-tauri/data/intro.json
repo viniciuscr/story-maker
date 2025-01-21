@@ -1,5 +1,5 @@
 {
-    "scenery": "./backgrounds/bus_station_morning.jpg",
+    "scenery": "/backgrounds/bus_station_morning.jpg",
     "stage": "FullScene",
     "dialogue": [
         {
