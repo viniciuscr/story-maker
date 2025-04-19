@@ -1,7 +1,38 @@
-# Tauri + React
+# Story Maker a visual novel framework
+This is a side project that I work on my spare time, and I use it to test and try new things. In the near feature I want to let it open and easy to add new content.
 
-This template should help get you started developing with Tauri and React in Vite.
+I have lots of ideas for this project, most of then I still figuring out a way to do them. 
+So, for now I don't have a roadmap, I am just implementing things that I do belive are importants.
 
-## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+## Objective
+The main objective for  this project is: to delivery ready to use bootstrap to write light novel offering some customizations through the easiest way possible. At the same time it must be modular and extendable, making it easy to add more advanced and customized experiences.
+
+
+## Project structure
+### Current state
+This is a very early stage where we have the base concepts about how it is goning to work. Not all is defined but at least it has enought to create a simple novel where no persistent state is needed.
+### Tech stack
+The project is mostly frontend, it can even be deployed only with the react part, served as a static website.
+The backend uses [Tauri](https://tauri.app/) to delivery a cross-plataform desktop app. It also could be used to bundle a mobile app (Android/iOS), but it was not tested yet. It mostly likly would need css adaptations to fit better in small screens.
+
+## Frontend
+The projects is made with [React](https://pt-br.reactjs.org) to create the interface and  [React Redux](https://react-redux.js.org/) to handle the application state.
+
+## Backend
+The backend is minimal, currently only exists mostly to be able to bundle the project in a desktop app. [Tauri](https://tauri.app/) provides a nice and small desktop by using the native webview of the OS host. Since it is made in [Rust](https://www.rust-lang.org/) it can be quitly performatic and keep a small size.
+
+### Core features
+The project is organized on a way to assimilate a play
+
+1. **Scene**: Scene represents what is going on on the current state of the story, it has actors that performs on the stage and have dialogues.
+
+2. **Actors**: Characters that interact on the current scene
+
+3. **Dialogue**: Conversation for the current scene, it would be the script for that scene.
+
+Apart from there we also have some other important features related to a game
+
+1. **Status**: Holds data related to the play, it could be life points, scores, itens acquired and such. This values can be used to determinate dialogues paths or limit options to select.  
+
+2. **Triggers**: In many situations one may want to trigger effects related to some event that have occured. A commom trigger would be *update_status* that apply changes to the status.

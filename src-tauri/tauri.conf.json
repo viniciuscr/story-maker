@@ -12,6 +12,7 @@
   "app": {
     "windows": [
       {
+        "center": true,
         "title": "story-maker",
         "width": 1200,
         "height": 800,
