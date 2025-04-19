@@ -1,3 +1,5 @@
+import { getCurrentWindow } from '@tauri-apps/api/window';
+
 import structuralStyles from './TitleScreen.module.css';
 import useTitleScreen from './useTitleScreen';
 import MenuItem from '../../core-base/MenuItem';
@@ -10,7 +12,7 @@ const Welcome = () => {
     { label: 'Continue', action: continueGame },
     { label: 'Load Game', action: showLoadGame },
     { label: 'Settings', action: showSettings },
-    { label: 'Exit' },
+    { label: 'Exit', action: async () => await getCurrentWindow().close() },
   ];
 
   return (
