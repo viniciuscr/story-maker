@@ -7,22 +7,18 @@ export const directionSclice = createSlice({
   initialState: [],
   extraReducers: (builder) => builder.addCase(startNewGame, () => []),
   reducers: {
-    pushDirection: (state, action) => {
+    enqueuDirection: (state, action) => {
       return [
+        { action: STAGE_DIRECTIONS.enters, actor: action.payload.affected, animations: action.payload.animation },
         ...state,
-        {
-          action: STAGE_DIRECTIONS.enters,
-          actor: action.payload.affected,
-          animations: action.payload.animation,
-        },
       ];
     },
-    popDirection: (state) => {
-      return state.slice(0, -1);
+    dequeueDirection: (state) => {
+      return state.slice(0, state.length - 1);
     },
   },
 });
 
-export const { pushDirection, popDirection } = directionSclice.actions;
+export const { enqueuDirection, dequeueDirection } = directionSclice.actions;
 
 export default directionSclice.reducer;

@@ -1,8 +1,10 @@
+import { getCurrentWindow } from '@tauri-apps/api/window';
+
 import { useDispatch } from 'react-redux';
 import { goToScene } from '../scene/sceneSlice';
 import { hide } from './titleScreenSlice';
 import { startNewGame } from '../../app/extraReducers';
-import { show as showSettingsScreen } from '../settings/settingsSlice';
+import { show as showSettingsScreen } from '../settingsScreen/settingsSlice';
 import { show as showLoadGameScreen } from '../loadGameScreen/loadGameSlice';
 
 const useTitleScreen = () => {
@@ -22,8 +24,10 @@ const useTitleScreen = () => {
   const showSettings = () => {
     dispatch(showSettingsScreen());
   };
-
-  return { newGame, continueGame, showLoadGame, showSettings };
+  const closeApp = async () => {
+    await getCurrentWindow().close();
+  };
+  return { newGame, continueGame, showLoadGame, showSettings, closeApp };
 };
 
 export default useTitleScreen;

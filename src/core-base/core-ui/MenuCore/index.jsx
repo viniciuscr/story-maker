@@ -6,10 +6,12 @@ import { Text } from '../../Text';
 
 import useLoadGameScreen from '../../../features/loadGameScreen/useLoadGame';
 import useSaveGameScreen from '../../../features/saveGameScreen/useSaveGame';
+import useSettingsScreen from '../../../features/settingsScreen/useSettingsScreen';
 
 const MenuTemplate = ({ children, title, subtitle, toggleMenu, active }) => {
   const { showLoadGameScreen } = useLoadGameScreen();
   const { showSaveGameScreen } = useSaveGameScreen();
+  const { showSettingsScreen } = useSettingsScreen();
 
   return (
     <div className={classNames(structuralStyles.container, personalizedStyles.escapeMenu)}>
@@ -32,7 +34,13 @@ const MenuTemplate = ({ children, title, subtitle, toggleMenu, active }) => {
             label="Save Game"
           />
           <MenuHeaderItem action={() => {}} label="Gallery" />
-          <MenuHeaderItem action={() => {}} label="Settings" />
+          <MenuHeaderItem
+            action={() => {
+              showSettingsScreen();
+              active !== 'settings' && toggleMenu();
+            }}
+            label="Settings"
+          />
         </ul>
       </div>
       <div className={personalizedStyles.menuContent}>
