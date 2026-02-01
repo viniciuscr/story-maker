@@ -1,7 +1,7 @@
 import { useDispatch, useStore } from 'react-redux';
 import { overrideSave } from './saveManagerSlice';
 
-const useSaveManer = () => {
+const useSaveManager = () => {
   const dispatch = useDispatch();
   const store = useStore();
   const date = new Date().toLocaleString(undefined, {
@@ -22,4 +22,4 @@ const useSaveManer = () => {
   return { saveOverride };
 };
 
-export default useSaveManer;
+export default useSaveManager;

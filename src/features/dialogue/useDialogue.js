@@ -8,8 +8,11 @@ const useDialogue = () => {
 
   const nextInteraction = (next) => (next.scene ? dispatch(goToScene(next.scene)) : dispatch(nextDialogue()));
 
-  //TODO: desnecessario, o listner vai fazer o update_status
-  const choose = ({ next }) => {
+  const choose = ({ next, triggers }) => {
+    // Store choice triggers for middleware to process
+    if (triggers) {
+      dispatch({ type: 'dialogue/processChoiceTriggers', payload: triggers });
+    }
     next.scene ? dispatch(goToScene(next.scene)) : dispatch(goToDialogue(next.dialogue));
   };
 

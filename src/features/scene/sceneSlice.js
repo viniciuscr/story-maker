@@ -25,14 +25,12 @@ export const sceneSlice = createSlice({
   reducers: {
     setCurrentScene: (state, action) => {
       state.currentScene = action.payload;
-      return state;
     },
     enters: (state, action) => {
-      return { ...state, onStage: [...state.onStage, action.payload] };
+      state.onStage.push(action.payload);
     },
     exits: (state, action) => {
       state.onStage = state.onStage.filter((actors) => actors.name !== action.payload);
-      return state;
     },
   },
 });

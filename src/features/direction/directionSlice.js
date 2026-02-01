@@ -2,12 +2,12 @@ import { createSlice } from '@reduxjs/toolkit';
 import { STAGE_DIRECTIONS } from '../scene/sceneSlice';
 import { startNewGame } from '../../app/extraReducers';
 
-export const directionSclice = createSlice({
+export const directionSlice = createSlice({
   name: 'directions',
   initialState: [],
   extraReducers: (builder) => builder.addCase(startNewGame, () => []),
   reducers: {
-    enqueuDirection: (state, action) => {
+    enqueueDirection: (state, action) => {
       return [
         { action: STAGE_DIRECTIONS.enters, actor: action.payload.affected, animations: action.payload.animation },
         ...state,
@@ -19,6 +19,6 @@ export const directionSclice = createSlice({
   },
 });
 
-export const { enqueuDirection, dequeueDirection } = directionSclice.actions;
+export const { enqueueDirection, dequeueDirection } = directionSlice.actions;
 
-export default directionSclice.reducer;
+export default directionSlice.reducer;

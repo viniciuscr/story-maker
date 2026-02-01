@@ -5,7 +5,7 @@ import { Text } from '../../core-base/Text';
 
 import useSaveGame from './useSaveGame';
 import MenuTemplate from '../../core-base/core-ui/MenuCore';
-import useSaveManer from '../../core-base/saveManager/useSaveManager';
+import useSaveManager from '../../core-base/saveManager/useSaveManager';
 import { useSelector } from 'react-redux';
 import { selectManualSaves } from '../../core-base/saveManager/saveManagerSlice';
 
@@ -23,7 +23,7 @@ const ItemContent = ({ saveSlot, time }) => (
 
 const SaveGameScreen = () => {
   const { toggleMenu } = useSaveGame();
-  const { saveOverride } = useSaveManer();
+  const { saveOverride } = useSaveManager();
   const manualSaves = useSelector(selectManualSaves);
 
   const savedGames = manualSaves.map((save) => ({

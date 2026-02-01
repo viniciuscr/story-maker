@@ -1,19 +1,19 @@
 import { useDispatch } from 'react-redux';
 
-import { enqueuDirection as enqueu, dequeueDirection as dequeue } from './directionSlice';
+import { enqueueDirection as enqueue, dequeueDirection as dequeue } from './directionSlice';
 
 const useDirections = () => {
   const dispatch = useDispatch();
 
-  const enqueuDirection = (direction) => {
-    dispatch(enqueu(direction));
+  const enqueueDirection = (direction) => {
+    dispatch(enqueue(direction));
   };
 
   const dequeueDirection = () => {
     dispatch(dequeue());
   };
 
-  return { enqueuDirection, dequeueDirection };
+  return { enqueueDirection, dequeueDirection };
 };
 
 export default useDirections;
